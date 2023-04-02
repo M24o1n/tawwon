@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "74586162089",
+    "project_id": "taawon-ff40f",
+    "storage_bucket": "taawon-ff40f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:74586162089:android:f7b2cb7c122b2f372a7ab8",
+        "android_client_info": {
+          "package_name": "com.example.tawwon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "74586162089-lt5ddgsdo87mf2uvmoods8a2519v4r52.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyi9brl2FuGUiNEbXUlEuLtZSrv6QIehg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "74586162089-lt5ddgsdo87mf2uvmoods8a2519v4r52.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
