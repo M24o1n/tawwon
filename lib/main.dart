@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'screens/client_register_view.dart';
+
 void main() {
   runApp(const MainApp());
 }
@@ -9,12 +11,14 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: const ClientRegisterView(),
+        theme: ThemeData(
+          primaryColor: const Color(0xFF213753),
+          scaffoldBackgroundColor: const Color(0xFF213753),
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+          colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.white, primary: const Color(0xFF213753)),
+        ));
   }
 }
