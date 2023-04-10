@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:tawwon/cloud_functions/Auth.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController email = TextEditingController();
+    TextEditingController password = TextEditingController();
+    final auth = Auth();
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -18,21 +22,46 @@ class LoginView extends StatelessWidget {
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.all(10.0),
-            child: TextField(
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.white,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(15.0)),
+          Directionality(
+            textDirection: TextDirection.rtl,
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: TextField(
+                    controller: email,
+                    decoration: const InputDecoration(
+                      filled: true,
+                      fillColor: Colors.white,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                      ),
+                      labelText: 'بريدك الالكتروني',
+                    ),
+                  ),
                 ),
-                labelText: 'رقم هاتفك',
-              ),
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: TextField(
+                    controller: password,
+                    decoration: const InputDecoration(
+                      filled: true,
+                      fillColor: Colors.white,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                      ),
+                      labelText: 'كلمة المرور',
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () async {
+              await auth.signInWithEmailAndPassword(email.text, password.text);
+              Navigator.pop(context);
+            },
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
             ),
