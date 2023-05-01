@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class ClientRegisterView extends StatelessWidget {
-  const ClientRegisterView({super.key});
+class OrgRegister extends StatelessWidget {
+  const OrgRegister({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'حساب فرد',
+          'حساب مؤسسة',
           style: TextStyle(fontSize: 28, fontFamily: 'ReadexPro'),
         ),
         centerTitle: true,
@@ -42,7 +42,7 @@ class ClientRegisterView extends StatelessWidget {
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(15.0)),
                     ),
-                    labelText: 'اسمك',
+                    labelText: 'اسم المنظمة',
                   ),
                 ),
               ),
@@ -55,7 +55,20 @@ class ClientRegisterView extends StatelessWidget {
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(15.0)),
                     ),
-                    labelText: 'رقم هاتفك',
+                    labelText: 'رقم هاتف المنظمة',
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(10.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                    ),
+                    labelText: 'ايميل المنظمة',
                   ),
                 ),
               ),

@@ -10,6 +10,19 @@ class LoginView extends StatelessWidget {
     TextEditingController password = TextEditingController();
     final auth = Auth();
     return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          ' تسجيل دخول',
+          style: TextStyle(fontSize: 28, fontFamily: 'ReadexPro'),
+        ),
+        centerTitle: true,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_ios_new),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
