@@ -1,6 +1,6 @@
-// write an outline of a page
-
 import 'package:flutter/material.dart';
+import 'package:tawwon/cloud_functions/database.dart';
+import 'package:tawwon/models/request.dart';
 
 class OrderDetails2 extends StatelessWidget {
   const OrderDetails2({super.key});
@@ -168,6 +168,8 @@ class OrderDetails2 extends StatelessWidget {
                     alignment: Alignment.bottomRight,
                     child: ElevatedButton(
                         onPressed: () {
+                          //send request
+                          DatabaseService.instance!.createRequest(request: Request());
                           showDialog(
                               context: context,
                               builder: (BuildContext context) {

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:tawwon/models/organization.dart';
+import 'package:tawwon/models/request.dart';
 import 'package:tawwon/screens/order_details2.dart';
 
 class OrderDetails1 extends StatefulWidget {
-  const OrderDetails1({super.key});
+  const OrderDetails1({super.key, required this.request});
+  final Request request;
 
   @override
   State<OrderDetails1> createState() => _OrderDetails1State();
