@@ -2,11 +2,12 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tawwon/cloud_functions/Auth.dart';
-import 'package:tawwon/screens/homePage.dart';
+import 'firebase_options.dart';
+import 'package:tawwon/screens/welcome.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MainApp());
 }
 
@@ -20,12 +21,13 @@ class MainApp extends StatelessWidget {
       initialData: null,
       child: MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: const HomePage(),
+          home: const WelcomeView(),
           theme: ThemeData(
               primaryColor: const Color(0xFF213753),
               scaffoldBackgroundColor: const Color(0xFF213753),
               visualDensity: VisualDensity.adaptivePlatformDensity,
-              colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.white, primary: const Color(0xFF213753)),
+              colorScheme: ColorScheme.fromSwatch().copyWith(
+                  secondary: Colors.white, primary: const Color(0xFF213753)),
               fontFamily: 'ReadexPro')),
     );
   }
