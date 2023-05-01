@@ -18,6 +18,7 @@ class _NewAccountViewState extends State<NewAccountView> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          elevation: 0,
           title: const Text(
             'حساب جديد',
             style: TextStyle(fontSize: 28, fontFamily: 'ReadexPro'),

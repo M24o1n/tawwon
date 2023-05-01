@@ -7,6 +7,7 @@ class OrgRegister extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         title: const Text(
           'حساب مؤسسة',
           style: TextStyle(fontSize: 28, fontFamily: 'ReadexPro'),
@@ -27,7 +28,7 @@ class OrgRegister extends StatelessWidget {
               padding: EdgeInsets.all(16.0),
               child: Image(
                 image: AssetImage('assets/images/ICON.png'),
-                width: 120,
+                width: 150,
               ),
             ),
           ),
