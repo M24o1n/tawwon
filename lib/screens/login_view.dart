@@ -17,75 +17,77 @@ class LoginView extends StatelessWidget {
         ),
         centerTitle: true,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios_new),
+          icon: const Icon(Icons.arrow_back_ios_new),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          const Center(
-            child: Padding(
-              padding: EdgeInsets.all(16.0),
-              child: Image(
-                image: AssetImage('assets/images/ICON.png'),
-                width: 140,
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            const Center(
+              child: Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Image(
+                  image: AssetImage('assets/images/ICON.png'),
+                  width: 140,
+                ),
               ),
             ),
-          ),
-          Directionality(
-            textDirection: TextDirection.rtl,
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: TextField(
-                    controller: email,
-                    decoration: const InputDecoration(
-                      filled: true,
-                      fillColor: Colors.white,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(15.0)),
+            Directionality(
+              textDirection: TextDirection.rtl,
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: TextField(
+                      controller: email,
+                      decoration: const InputDecoration(
+                        filled: true,
+                        fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                        ),
+                        labelText: 'بريدك الالكتروني',
                       ),
-                      labelText: 'بريدك الالكتروني',
                     ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: TextField(
-                    controller: password,
-                    decoration: const InputDecoration(
-                      filled: true,
-                      fillColor: Colors.white,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: TextField(
+                      controller: password,
+                      decoration: const InputDecoration(
+                        filled: true,
+                        fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                        ),
+                        labelText: 'كلمة المرور',
                       ),
-                      labelText: 'كلمة المرور',
                     ),
                   ),
-                ),
-              ],
-            ),
-          ),
-          ElevatedButton(
-            onPressed: () async {
-              await auth.signInWithEmailAndPassword(email.text, password.text);
-              Navigator.pop(context);
-            },
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
-            ),
-            child: const Text(
-              'التالي',
-              style: TextStyle(
-                color: Color(0xFF213753),
+                ],
               ),
             ),
-          ),
-        ],
+            ElevatedButton(
+              onPressed: () async {
+                await auth.signInWithEmailAndPassword(email.text, password.text);
+                Navigator.pop(context);
+              },
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+              ),
+              child: const Text(
+                'التالي',
+                style: TextStyle(
+                  color: Color(0xFF213753),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

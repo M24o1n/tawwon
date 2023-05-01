@@ -2,8 +2,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tawwon/cloud_functions/Auth.dart';
-import 'firebase_options.dart';
 import 'package:tawwon/screens/welcome.dart';
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,8 +26,7 @@ class MainApp extends StatelessWidget {
               primaryColor: const Color(0xFF213753),
               scaffoldBackgroundColor: const Color(0xFF213753),
               visualDensity: VisualDensity.adaptivePlatformDensity,
-              colorScheme: ColorScheme.fromSwatch().copyWith(
-                  secondary: Colors.white, primary: const Color(0xFF213753)),
+              colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.white, primary: const Color(0xFF213753)),
               fontFamily: 'ReadexPro')),
     );
   }
