@@ -85,7 +85,7 @@ class CreateOrganizationPageView1 extends StatelessWidget {
             ElevatedButton(
                 onPressed: () {
                   Navigator.pushReplacement(
-                      context, MaterialPageRoute(builder: (context) => const CreateOrganizationPage2()));
+                      context, MaterialPageRoute(builder: (context) => const HomePage())); //change to create org page 2 later this is tr8ee3
                 },
                 style: ElevatedButton.styleFrom(
                   foregroundColor: const Color(0xFF213753),
